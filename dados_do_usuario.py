@@ -17,6 +17,28 @@ def CalculaTMBmultAF():
     taoccd=CalculaTaxaMetabolismoBasal(weight,height,age)*1.725
     return taoccd
 
+def ReturnWeight():
+    Weight = weight
+    return Weight
+    
+def ReturnHeight2():
+    Height2 = height**2
+    return Height2
+    
+
+def CalculaBMI(ReturnWeight,ReturnHeight2):
+    BMI=(ReturnWeight())/(ReturnHeight2())  
+    return BMI
+
+def ReturnTypeBMI():
+    if CalculaBMI(ReturnWeight,ReturnHeight2)<18.5:
+        print("Você está abaixo do peso")
+    elif 18.5<=CalculaBMI(ReturnWeight,ReturnHeight2)<25:
+        print("Você tem peso ideal")
+    elif 25<=CalculaBMI(ReturnWeight,ReturnHeight2)<30:
+        print("Você esta ligeiramente acima do peso")
+    else:
+        print("Você esta muito acima do peso")
     
 UserDietWeek={}
 
@@ -48,3 +70,5 @@ for linha in leitura[3:]:
    
 print("Sua taxa de metabolismo basal é ",CalculaTaxaMetabolismoBasal(weight,height,sex))
 print("Seu gasto calorico diário é de ",CalculaTMBmultAF()," calorias.")
+print("O seu índice de massa corporal é de ",CalculaBMI(ReturnWeight,ReturnHeight2), "Kg/m2")
+ReturnTypeBMI()
