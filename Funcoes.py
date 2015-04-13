@@ -5,6 +5,7 @@ Created on Sat Apr 11 21:49:53 2015
 @author: Carlos
 """
 
+
 from alimentos import NutritionFacts
 from dados_do_usuario import UserDietWeek
 from dados_do_usuario import CalculaTMBmultAF
@@ -33,4 +34,3 @@ def CalculasumgmultcpergsubtraiCalculaTMBmultAF():
     return f
 
 print("O seu balanço calórico diario é de ", CalculasumgmultcpergsubtraiCalculaTMBmultAF()," calorias")
-    

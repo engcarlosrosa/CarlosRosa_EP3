@@ -28,9 +28,11 @@ for contador,linha in enumerate(leitura_a[1:]):
     for p in partes:
         print(p)     
 
-print(NutritionFacts)
-print(type(leitura_a))
 
+print(NutritionFacts)
+'''
+print(leitura_a)
+'''
 SearchNutritionFacts = NutritionFacts.get('PATE')
 print(SearchNutritionFacts)
 '''
