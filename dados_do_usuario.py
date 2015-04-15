@@ -4,8 +4,10 @@ Created on Thu Apr  9 11:13:25 2015
 
 @author: pccb
 """
-#from alimentos import NutritionFacts
+#from alimentos import NutritionFactsCalPerGram
 from alimentos import alimentoscsv
+from alimentos import alimentosproteinascsv
+from alimentos import proteins
 
 dados_usuario= open("usuario.csv","r")
 leitura=dados_usuario.readlines()
@@ -48,8 +50,8 @@ def ReturnTypeBMI():
     
 UserFoodGramsWeek={}
 UserDayCaloriesWeek={}
-UserDayCarboidratesWeek={}
 UserDayProteinsWeek={}
+UserDayCarboidratesWeek={}
 UserDayFatWeek={}
 
 userpeaces = leitura[1].split(",")
@@ -60,9 +62,9 @@ sex = userpeaces[3]
 height = float(userpeaces[4])
 fator = userpeaces[5]
 
-NutritionFacts = alimentoscsv()
+NutritionFactsCalPerGram = alimentoscsv()
 
-#print(NutritionFacts)
+#print(NutritionFactsCalPerGram)
 
 def usuariocsv():
     x=0
@@ -76,29 +78,41 @@ def usuariocsv():
         grams=usergramsamount
         date=userpeaces[0]
         #amountofcaloriesperfood=grams*
-        UserDayCaloriesWeek[date]=NutritionFacts[food]*grams
+        UserDayCaloriesWeek[date]=NutritionFactsCalPerGram[food]*grams
         for date in UserDayCaloriesWeek:
             if date in UserDayCaloriesWeek:
-                UserDayCaloriesWeek[date]+= NutritionFacts[food]*grams
+                UserDayCaloriesWeek[date]+= NutritionFactsCalPerGram[food]*grams
             else:
-                UserDayCaloriesWeek[date]=NutritionFacts[food]*grams    
+                UserDayCaloriesWeek[date]=NutritionFactsCalPerGram[food]*grams    
         UserFoodGramsWeek[food]=grams
         #print(userpeaces)
         '''        
-        UserDayCarboidratesWeek[date]=NutritionFacts[food]*grams
+        UserDayCarboidratesWeek[date]=NutritionFactsCalPerGram[food]*grams
         for date in UserDayCarboidratesWeek:
             if date in UserDayCarboidratesWeek:
-                UserDayCarboidratesWeek[date]+=NutritionFacts[food]*carboidrates
+                UserDayCarboidratesWeek[date]+=NutritionFactsCalPerGram[food]*carboidrates
             else:
-                UserDayCarboidratesWeek[date]=NutritionFacts[food]*carboidrates
+                UserDayCarboidratesWeek[date]=NutritionFactsCalPerGram[food]*carboidrates
         '''
        
     #print("Sua taxa de metabolismo basal é ",CalculaTaxaMetabolismoBasal(weight,height,sex))
     #print("Seu gasto calorico diário é de ",CalculaTMBmultAF()," calorias.")
     #print("O seu índice de massa corporal é de ",CalculaBMI(ReturnWeight,ReturnHeight2), "Kg/m2")
     #ReturnTypeBMI()
-    
-    #print(CalculaTMBmultAF())
-    #print(UserFoodGramsWeek)
-    print(UserDayCaloriesWeek)
-usuariocsv()
+NutritionsFactsProteinsPerGram=alimentosproteinascsv()
+x=0
+for linha in leitura[3:]:
+    x+=1
+    userpeaces = linha.strip().split(',')
+    usergramsamount=float(userpeaces[2])
+
+    food=userpeaces[1]
+    grams=usergramsamount
+    date=userpeaces[0]
+    UserDayProteinsWeek[date]=NutritionsFactsProteinsPerGram[food]*grams
+    for date in UserDayCarboidratesWeek:
+        if date in UserDayCarboidratesWeek:
+            UserDayProteinsWeek[date]+=NutritionsFactsProteinsPerGram[food]*proteins
+        else:
+            UserDayProteinsWeek[date]=NutritionsFactsProteinsPerGram[food]*proteins
+print(UserDayProteinsWeek)

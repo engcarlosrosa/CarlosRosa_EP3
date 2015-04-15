@@ -10,10 +10,6 @@ from dados_do_usuario import UserDayCaloriesWeek
 from dados_do_usuario import UserFoodGramsWeek
 from dados_do_usuario import CalculaTMBmultAF
 
-#{k : v * NutritionFacts[k] for k, v in UserFoodGramsWeek.items() if k in NutritionFacts}
-
-
-
 def CalculaGramsCaloriesGrams(d1, d2):
     d3 = dict()
     for k in d1:
