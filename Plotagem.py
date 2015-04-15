@@ -8,12 +8,13 @@ import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 import matplotlib.pyplot as plt
 from dados_do_usuario import UserDayCaloriesWeek
-
-
+from dados_do_usuario import UserDayProteinsWeek
+from dados_do_usuario import UserDayCarboidratesWeek
+from dados_do_usuario import UserDayFatWeek
 from Funcoes import CalculaTMBmultAF
 from Funcoes import CalculaSumUserDayCaloriesWeek
 
-# Example data
+
 categoria = ('Calorias consumidas','calorias recomendadas',)
 y_pos = np.arange(len(categoria))
 quantidade = [CalculaSumUserDayCaloriesWeek(),CalculaTMBmultAF()]
@@ -24,12 +25,18 @@ plt.title('Quantidade diaria recomendada vs consumida')
 plt.show()
 
 
-print(list(UserDayCaloriesWeek.keys()))
-print(UserDayCaloriesWeek.values())
-num_days = len(list(UserDayCaloriesWeek.keys()))
+print("Lista de keys UserDayCaloriesWeek: ",list(UserDayCaloriesWeek.keys()))
+print("UserDayCaloriesWeek: ",UserDayCaloriesWeek.values())
+print("Lista de keys UserDayProteinWeek: ",list(UserDayProteinsWeek.keys()))
+print("UserDayProteinWeek: ",UserDayProteinsWeek.values())
 
-plt.plot(list(range(num_days)),list(UserDayCaloriesWeek.values()))
-#plt.axis([0,UserDayCaloriesWeek[10],0,UserDayCaloriesWeek[10]])
+num_days_cal = len(list(UserDayCaloriesWeek.keys()))
+num_days_protein = len(list(UserDayProteinsWeek.keys()))
+num_days_carboidrates = len(list(UserDayCarboidratesWeek.values()))
+num_days_fat=len(list(UserDayFatWeek.values()))
+
+
+plt.plot(list(range(num_days_cal)),list(UserDayCaloriesWeek.values()),list(range(num_days_protein)),list(UserDayProteinsWeek.values()),list(range(num_days_carboidrates)),list(UserDayCarboidratesWeek.values()),list(range(num_days_fat)),list(UserDayFatWeek.values()))
 plt.xlabel("Dias da semana]")
 plt.ylabel("Calories")
 plt.title("Quantidade de Calorias ao longo da semana")
