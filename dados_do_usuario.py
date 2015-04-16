@@ -69,6 +69,7 @@ NutritionFactsProteinsPerGram=alimentosproteinascsv()
 NutritionFactsCarboidratesPerGram=alimentoscarboidratescsv()
 NutritionFactsFatPerGram=alimentosfatcsv()
 #print(NutritionFactsCalPerGram)
+print(NutritionFactsProteinsPerGram)
 
 def usuariocarboidratoscsv():
     x=0
