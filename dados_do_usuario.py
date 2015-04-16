@@ -88,7 +88,7 @@ def usuariocarboidratoscsv():
                 UserDayCarboidratesWeek[date]+=NutritionFactsCarboidratesPerGram[food]*grams
             else:
                  UserDayCarboidratesWeek[date]+=NutritionFactsCarboidratesPerGram[food]*grams
-    print("UserDayCarboidratesWeek: ",UserDayCarboidratesWeek)
+    #print("UserDayCarboidratesWeek: ",UserDayCarboidratesWeek)
 usuariocarboidratoscsv()
 
 def usuariocaloriascsv():
@@ -106,7 +106,7 @@ def usuariocaloriascsv():
                 UserDayCaloriesWeek[date]+= NutritionFactsCalPerGram[food]*grams
             else:
                 UserDayCaloriesWeek[date]=NutritionFactsCalPerGram[food]*grams
-    print("UserDayCaloriesWeek: ",UserDayCaloriesWeek)
+    #print("UserDayCaloriesWeek: ",UserDayCaloriesWeek)
 usuariocaloriascsv()
 
 def usuarioproteinascsv():
@@ -124,7 +124,7 @@ def usuarioproteinascsv():
                 UserDayProteinsWeek[date]+=NutritionFactsProteinsPerGram[food]*grams
             else:
                 UserDayProteinsWeek[date]=NutritionFactsProteinsPerGram[food]*grams  
-    print("UserDayProteinsWeek: ",UserDayProteinsWeek)
+    #print("UserDayProteinsWeek: ",UserDayProteinsWeek)
 usuarioproteinascsv()
 
 def usuariofatcsv():
@@ -142,7 +142,7 @@ def usuariofatcsv():
                 UserDayFatWeek[date]+=NutritionFactsFatPerGram[food]*grams
             else:
                 UserDayFatWeek[date]=NutritionFactsFatPerGram[food]*grams  
-    print("UserDayFatWeek: ",UserDayFatWeek)
+    #print("UserDayFatWeek: ",UserDayFatWeek)
 usuariofatcsv()
 
 '''               
