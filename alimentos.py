@@ -26,6 +26,7 @@ def alimentoscsv():
         NutritionFactsCalPerGram[partes[0]]=calories/ahundredgrams
     return NutritionFactsCalPerGram
 alimentoscsv()
+#print(alimentoscsv())
 
 def alimentosproteinascsv():
     alimentos=open("alimentos.csv","r")

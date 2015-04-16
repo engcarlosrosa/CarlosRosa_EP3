@@ -24,11 +24,12 @@ plt.xlabel('Quantidade (calorias)')
 plt.title('Quantidade diaria recomendada vs consumida')
 plt.show()
 
-
+'''
 print("Lista de keys UserDayCaloriesWeek: ",list(UserDayCaloriesWeek.keys()))
 print("UserDayCaloriesWeek: ",UserDayCaloriesWeek.values())
 print("Lista de keys UserDayProteinWeek: ",list(UserDayProteinsWeek.keys()))
 print("UserDayProteinWeek: ",UserDayProteinsWeek.values())
+'''
 
 num_days_cal = len(list(UserDayCaloriesWeek.keys()))
 num_days_protein = len(list(UserDayProteinsWeek.keys()))
@@ -37,7 +38,31 @@ num_days_fat=len(list(UserDayFatWeek.values()))
 
 
 plt.plot(list(range(num_days_cal)),list(UserDayCaloriesWeek.values()),list(range(num_days_protein)),list(UserDayProteinsWeek.values()),list(range(num_days_carboidrates)),list(UserDayCarboidratesWeek.values()),list(range(num_days_fat)),list(UserDayFatWeek.values()))
-plt.xlabel("Dias da semana]")
+plt.xlabel("Dias da semana")
+plt.ylabel("Calories, Proteinas, Carboidratos e Gordura")
+plt.title("Quantidade ao longo da semana")
+plt.show()
+
+plt.plot(list(range(num_days_cal)),list(UserDayCaloriesWeek.values()))
+plt.xlabel("Dias da semana")
 plt.ylabel("Calories")
 plt.title("Quantidade de Calorias ao longo da semana")
+plt.show()
+
+plt.plot(list(range(num_days_protein)),list(UserDayProteinsWeek.values()))
+plt.xlabel("Dias da semana")
+plt.ylabel("Proteinas")
+plt.title("Quantidade de proteinas ao longo da semana")
+plt.show()
+
+plt.plot(list(range(num_days_carboidrates)),list(UserDayCarboidratesWeek.values()))
+plt.xlabel("Dias da semana")
+plt.ylabel("Carboidratos")
+plt.title("Quantidade de carboidratos ao longo da semana")
+plt.show()
+
+plt.plot(list(range(num_days_fat)),list(UserDayFatWeek.values()))
+plt.xlabel("Dias da semana")
+plt.ylabel("Gordura")
+plt.title("Quantidade de gordura ao longo da semana")
 plt.show()
